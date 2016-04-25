@@ -1,0 +1,35 @@
+//Interation 1//
+
+click(START)
+
+wait(SEARCHBAR)
+
+type("calc"+Key.ENTER)
+
+wait(CALCULATOR)
+
+click(ONE)
+
+click(PLUS)
+
+click(ONE)
+
+click(EQUALS)
+
+//Interation 2//
+
+click(START)
+
+wait(SEARCHBAR)
+
+type("calc"+Key.ENTER)
+
+wait(CALC)
+
+click(Pattern(CALCONE).targetOffset(-80,17))
+
+click(Pattern(CALCPLUS).targetOffset(35,47))
+
+click(Pattern(CALCONE).targetOffset(-79,16))
+
+click(Pattern(CALCEQUALS).targetOffset(75,29))

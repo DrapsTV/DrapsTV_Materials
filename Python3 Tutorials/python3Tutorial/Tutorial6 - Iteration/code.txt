@@ -1,0 +1,75 @@
+//this is the code for the 6th tutorial: Iteration
+
+
+//example1
+
+def Main():
+    for step in range(5):
+        print(step)
+
+if __name__ == "__main__":
+    Main()
+
+
+//example2
+
+def Main():
+    for step in range(5):
+        print(step)
+
+    words = ['cat', 'bat', 'hat', 'rat', 'sat']
+
+    for word in words:
+        print(word)
+
+if __name__ == "__main__":
+    Main()
+
+
+
+//example3
+
+def Main():
+    for step in range(5):
+        print(step)
+
+    words = ['cat', 'bat', 'hat', 'rat', 'sat']
+
+    for word in words:
+        print(word)
+        
+    num = 0
+    while num <= 0:
+        num = int(input("Please enter a positive integer: "))
+
+
+if __name__ == "__main__":
+    Main()
+
+
+
+//example4
+
+def Main():
+    for step in range(5):
+        print(step)
+
+    words = ['cat', 'bat', 'hat', 'rat', 'sat']
+
+    for word in words:
+        print(word)
+        
+    num = 0
+    while num <= 0:
+        num = int(input("Please enter a positive integer: "))
+
+    while True:
+        print("Hello")
+
+
+if __name__ == "__main__":
+    Main()
+
+
+
+

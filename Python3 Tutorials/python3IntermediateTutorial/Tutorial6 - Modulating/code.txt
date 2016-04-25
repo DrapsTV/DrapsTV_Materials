@@ -1,0 +1,58 @@
+
+--------------// code //-------------------
+
+
+//vector2D.py//
+class Vector2D:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+
+//mod.py//
+----------------------------
+import vector2d
+
+def Main():
+    vec1 = vector2d.Vector2D(5,6)
+    vec2 = vector2d.Vector2D(1,1)
+
+    print(vec1.x)
+    print(vec1.y)
+    print(vec2.x)
+    print(vec2.y)
+
+if __name__ == '__main__':
+    Main()
+
+
+----------------------
+
+from vector2d import Vector2D   #or alternativly a * for everything.
+
+def Main():
+    vec1 = Vector2D(5,6)
+    vec2 = Vector2D(1,1)
+
+    print(vec1.x)
+    print(vec1.y)
+    print(vec2.x)
+    print(vec2.y)
+
+if __name__ == '__main__':
+    Main()
+
+
+------------------------//Challenge//------------------
+
+Try writing a program that stores a person class in one file and pet class in another file,
+import these into a program file which uses both the person and pet class.
+
+If you can try make the person class have a pet or multiple pets!
+
+
+
+(I would love to see your finished program! 
+stick it on http://pastebin.com/ and send me the link via youtube inbox!)
+

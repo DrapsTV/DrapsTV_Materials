@@ -1,0 +1,74 @@
+
+--------------// code //-------------------
+
+
+//myModule.c//
+
+#include <Python.h>
+ 
+int Cfib(int n)
+{
+    if (n < 2)
+        return n;
+    else
+        return Cfib(n-1) + Cfib(n-2);
+}
+ 
+static PyObject* fib(PyObject* self, PyObject* args)
+{
+    int n;
+ 
+    if (!PyArg_ParseTuple(args, "i", &n))
+        return NULL;
+ 
+    return Py_BuildValue("i", Cfib(n));
+}
+
+static PyObject* version(PyObject* self)
+{
+    return Py_BuildValue("s", "Version 1.0");
+}
+ 
+static PyMethodDef myMethods[] = {
+    {"fib", fib, METH_VARARGS, "Calculate the Fibonacci numbers."},
+    {"version", (PyCFunction)version, METH_NOARGS, "Returns the version."},
+    {NULL, NULL, 0, NULL}
+};
+ 
+static struct PyModuleDef myModule = {
+	PyModuleDef_HEAD_INIT,
+	"myModule", #name of module.
+	"Fibonacci Module",
+	-1,
+	myMethods
+};
+
+PyMODINIT_FUNC PyInit_myModule(void)
+{
+    return PyModule_Create(&myModule);
+}
+
+
+----------------------------
+
+//setup.py//
+from distutils.core import setup, Extension
+ 
+module = Extension('myModule', sources = ['myModule.c'])
+ 
+setup (name = 'PackageName',
+        version = '1.0',
+        description = 'This is a package for myModule',
+        ext_modules = [module])
+
+
+----------------------
+
+import myModule
+
+print(myModule.fib(10))
+print(myModule.version())
+
+
+
+

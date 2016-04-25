@@ -1,0 +1,58 @@
+//this is the code for the 5th tutorial: Functions
+
+
+//example1
+
+def hello():
+    print("hello")
+    print("hello")
+    print("hello")
+    print("hello")
+
+print("started")
+hello()
+
+
+//example2
+
+def getInteger():
+    result = int(input("Please enter an integer: "))
+    return result
+
+print("started")
+output = getInteger()
+print(output)
+
+
+//example3
+
+def getInteger():
+    result = int(input("Please enter an integer: "))
+    return result
+
+def Main():
+    print("started")
+    output = getInteger()
+    print(output)
+
+if __name__ == "__main__":
+    Main()
+
+
+//example4
+
+def getInteger(prompt):
+    result = int(input(prompt))
+    return result
+
+def Main():
+    print("started")
+    output = getInteger("Please enter an integer: ")
+    output2 = getInteger("Please enter another integer: ")
+    print(output)
+
+if __name__ == "__main__":
+    Main()
+
+
+

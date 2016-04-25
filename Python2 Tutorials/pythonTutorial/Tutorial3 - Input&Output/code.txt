@@ -1,0 +1,26 @@
+
+name = "draps"
+
+print "Hello, my name is " + name
+
+name = raw_input("Please enter your name: ")
+
+print "hello, my name is " + name
+
+name = input("Please enter your name: ")
+
+
+//tut3.py// Stage 1
+
+name = raw_input("Please enter your name: ")
+print "Hello " + name + ", Thank you for using my first program!"
+
+
+
+//tut3.py// Stage 2
+
+print "Welcome to Multiply!"
+num1 = int(raw_input("Please enter your first number: "))
+num2 = int(raw_input("Please enter your second number: "))
+print num1 * num2
+

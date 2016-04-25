@@ -1,0 +1,117 @@
+
+--------------// code //-------------------
+
+
+//first iteration.//
+
+class Pet:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+class Cat(Pet):
+
+    def __init__(self, name, age):
+        super().__init__(self, name, age) # You can run and super class method like this.
+
+
+def Main():
+
+    thePet = Pet("Pet", 1)
+    jess = Cat("jess", 3)
+
+    print("is jess a Cat?" + str(isinstance(jess, Cat)))
+    print("is jess a Pet?" + str(isinstance(jess, Pet)))
+    print("is thePet a Cat?" + str(isinstance(thePet, Cat)))
+    print("is thePet a Pet?" + str(isinstance(thePet, Pet)))
+    
+    print(jess.name)
+
+if __name__ == '__main__':
+    Main()
+
+
+//second iteration. (polymorphism)//
+
+class Pet:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def talk(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Cat(Pet):
+
+    def __init__(self, name, age):
+        super().__init__(self, name, age)
+
+    def talk(self):
+        return "Meowww"
+
+class Dog(Pet):
+
+    def __init__(self, name, age):
+        super().__init__(self, name, age)
+
+    def talk(self):
+        return "Wooff!"
+
+def Main():
+
+    pets = [Cat("jess",3), Dog("Jack", 2), Cat("fred", 7), Pet("thePet", 5)]
+
+    for pet in pets:
+        print("Name:" + pet.name + ", Age:" + str(pet.age) + ", says:" + pet.talk())
+    
+if __name__ == '__main__':
+    Main()
+
+
+
+-----------------// extra code //-------------------------
+
+class Person():
+ def pay_bill():
+   raise NotImplementedError
+
+class Millionare(Person):
+ def pay_bill():
+   print("Here you go! Keep the change!")
+
+class GradStudent(Person):
+ def pay_bill():
+   print("Can I owe you ten bucks or do the dishes?")
+
+def Main():
+
+    peoples = [Millionare(), GradStudent()]
+
+    for people in peoples:
+        people.pay_bill()
+    
+if __name__ == '__main__':
+    Main()
+
+------------------------//Challenge//------------------
+
+Create a shape program, that has the shapes:
+
+Trianle,
+Square,
+Circle,
+Hexagon,
+Pentagon.
+
+you must store how many points they have and what shape they are. 
+Also have a method called describe which outputs what the shape is and how many points it has.
+
+add them all to a list and output there describe methods.
+
+Hints: Try to use inheritance and polymorphism. My code should help.
+
+(I would love to see your finished program! 
+stick it on http://pastebin.com/ and send me the link via youtube inbox!)

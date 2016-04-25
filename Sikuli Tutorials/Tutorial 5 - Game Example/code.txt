@@ -1,0 +1,41 @@
+// clicker heroes example //
+
+Settings.MoveMouseDelay = 0.0
+running = True
+shouldClickFor = 50
+shouldUpgrade = False
+timeToDead = 0
+boss = False
+
+def runHotkey(event):
+    global running
+    running = False
+
+Env.addHotkey(Key.F1, KeyModifier.CTRL, runHotkey)
+ch = switchApp("Clicker Heroes")
+while(ch.hasWindow() and running):
+    if shouldClickFor > 0:
+        hover(Pattern(MUTED).similar(0.86).targetOffset(-208,-215))
+        while shouldClickFor > 0 and running:
+            mouseDown(Button.LEFT)
+            mouseUp(Button.LEFT)
+            shouldClickFor -= 1
+    if timeToDead >= 2 and not exists(Pattern(SKULL).similar(0.93)):
+        click(Pattern(RIGHTARROWFORWARD).similar(0.90).targetOffset(-117,5))
+        timeToDead = 0
+        
+    if exists(Pattern(UPGRADE).similar(0.90)):
+        shouldUpgrade = True
+        click(Pattern(UPGRADE).similar(0.90))
+        timeToDead += 1
+    else:
+        if not shouldUpgrade:
+            timeToDead = 0
+        shouldUpgrade = False
+        shouldClickFor = 50
+        if exists(Pattern(TIMER).similar(0.91)) and not boss:
+           shouldClickFor = 150 
+           boss = True
+        elif exists(Pattern(TIMER).similar(0.91)):
+            click(Pattern(RIGHTARROWBACK).similar(0.90).targetOffset(-249,8))
+            boss = False

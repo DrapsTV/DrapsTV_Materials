@@ -1,0 +1,61 @@
+//this is the code for the 7th tutorial: File IO
+
+
+//example1
+
+def Main():
+    f = open('myfile.txt', 'r')
+
+    for line in f:
+        prin(line)
+
+    f.close()
+
+if __name__ == '__main__':
+    Main()
+
+
+//example2
+
+def Main():
+    f = open('myfile.txt', 'r')
+
+    for line in f:
+        print(line.strip('\n'))
+
+    f.close()
+
+if __name__ == '__main__':
+    Main()
+
+
+//example 3//
+
+def Main():
+    f = open('myfile.txt', 'w')
+
+    for i in range(4):
+        f.write(raw_input("Please enter a word: ") + '\n')
+
+    f.close()
+
+if __name__ == '__main__':
+    Main()
+
+//example 4//
+
+def Main():
+    
+    words = ["cat","sat","bat","map"]
+
+    with open("words.txt", 'w') as f:
+	for word in words:
+	    f.write(word + '\n')
+
+if __name__ == '__main__':
+    Main()
+
+
+
+
+

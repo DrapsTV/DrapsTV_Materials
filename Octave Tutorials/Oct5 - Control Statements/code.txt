@@ -1,0 +1,44 @@
+
+--------------// code //-------------------
+
+PS1(">> ")
+
+//if//
+x = 6;
+if x >= 5,
+    disp("x is larger than 5!");
+end;
+
+//if-elseif-else//
+x = 6;
+if x > 10,
+    disp("x is bigger than 10!");
+elseif x > 0,
+    disp("x is greater than 0 but less than 10!");
+else
+    disp("x is negative!");
+end;
+
+//for loop//
+for i=1:10,
+    disp(sprintf("%ith index",i));
+end;
+
+
+//while loop//
+i = 1;
+while i < 10,
+    disp(i);
+    i=i+1;
+end;
+
+//break statements//
+n = 1;
+while true,
+    v = v + n;
+    if n > 4,
+	break;
+    end;
+    n = n + 1;
+end;
+v

@@ -1,0 +1,37 @@
+//this is the code for the 9th tutorial: Modules
+
+
+//example1
+
+import math
+
+def Main():
+    try:
+        number = float(raw_input("Please enter a number: "));
+        number = math.fabs(number);
+        print(number)
+    except:
+        print("you did not enter a number...")
+
+if __name__ == "__main__":
+    Main()
+
+
+
+//example2
+
+import math
+
+def Main():
+    try:
+        radius = float(raw_input("Please enter a radius: "))
+        area = math.pi * radius**2
+        print(area)
+    except:
+        print("you did not enter a number...")
+
+if __name__ == "__main__":
+    Main()
+
+
+

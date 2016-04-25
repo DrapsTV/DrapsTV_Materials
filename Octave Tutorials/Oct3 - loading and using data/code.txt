@@ -1,0 +1,48 @@
+
+--------------// code //-------------------
+
+PS1(">> ")
+
+pwd – print working directory (Where you are)
+
+cd – Change Directory
+
+ls, dir – List current directory
+
+
+
+load single.dat
+
+m = load("single.dat")
+
+v = rand(5,1)
+
+save mydata.dat v
+
+
+
+f = tmpfile
+
+save f v
+
+v = [0]
+
+load f
+
+
+a = [1; 2; 3]
+b = [4; 5; 6]
+
+[a; b]
+
+c = [a b]
+
+
+size(c)
+
+length(c)
+
+length(a)
+
+
+

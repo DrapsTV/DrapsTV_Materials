@@ -1,0 +1,57 @@
+
+//example 1//
+num = int(input("Please enter a number: "))
+if (num == 0):
+    print("The number is zero")
+
+print(num)
+
+
+//example 2//
+num = int(input("Please enter a number: "))
+if (num != 0):
+    print("The number is not zero")
+
+print(num)
+
+
+//example 3//
+num = int(input("Please enter a number: "))
+if (num > 0):
+    print("The number is greater than zero")
+
+print(num)
+
+//example 4//
+num = int(input("Please enter a number: "))
+if (num > 0):
+    print("The number is greater than zero")
+else:
+    print("the number is zero or less")
+
+print(num)
+
+//example 4 Part 2//
+num = int(input("Please enter a number: "))
+if (num > 0):
+    print("The number is greater than zero")
+elif (num < 0):
+    print("the number is less than zero")
+else:
+   print("the number is zero") 
+
+print(num)
+
+//example 5/
+num1 = int(input("Please enter the first number: "))
+num2 = int(input("Please enter the second number: "))
+if (num1 > num2):
+    print("The number is greater than the second")
+    print("The difference is " + str(num1-num2))
+elif (num1 < num2):
+    print("the number is less than the second")
+    print("The difference is " + str(num2-num1))
+else:
+   print("the numbers is equal") 
+
+

@@ -1,0 +1,66 @@
+These are the statements of code we executed:
+
+//declares a variable called myNumber and sets it to 3
+myNumber = 3
+
+//prints out the myNumber
+print myNumber
+
+myNumber = 10
+
+print myNumber
+
+myNumber = 10 + 90
+
+print myNumber
+
+myNumber = myNumber - 50
+
+print myNumber
+
+myNumber -= 50
+
+print myNumber
+
+myNumber = 11 * 11
+
+print myNumber
+
+myNumber /= 50
+
+print myNumber
+
+myNumber = 121.0/50.0
+
+print myNumber
+
+myNumber = 121.0//50.0
+
+print myNumber
+
+//declares a string called text, with the string "Hello World"
+text = "Hello World"
+
+print text
+
+//declares a list called nums
+nums = []
+
+//append adds an value to the list.
+nums.append(21)
+nums.append(40.5)
+nums.append("I'm not a number")
+
+print nums
+
+//declares a dictionary called services with the keys and values of some ports.
+services = {'ftp':21, 'ssh':22, 'smtp':25, 'http':80}
+
+print services
+
+//gives us a list of the keys.
+services.keys()
+
+//gives us a list of the values.
+services.values()
+

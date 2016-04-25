@@ -1,0 +1,41 @@
+//this is the code for the 8th tutorial: Exceptions
+
+
+//example1
+
+def Main():
+    try:
+        f = open("blah.txt","r")
+        for line in f:
+            print(line.strip('\n'))
+	
+	f.close()
+    except:
+        print("The file was either not found or unable to be read.")
+
+if __name__ == "__main__":
+    Main()
+
+
+
+//example2
+
+def Main():
+    try:
+        f = open("blah.txt","r")
+        for line in f:
+            print(line.strip('\n'))
+	
+	f.close()
+    except:
+        print("The file was either not found or unable to be read.")
+
+    finally:
+	print("Exiting")
+
+if __name__ == "__main__":
+    Main()
+
+
+
+

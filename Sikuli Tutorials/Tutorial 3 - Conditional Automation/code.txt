@@ -1,0 +1,31 @@
+// input example //
+
+name = input("Enter your name")
+popup("Hello "+name, "Hello!")
+
+someText = inputText("Enter some text!")
+popError("ah! "+someText)
+
+myOptions = ('1', '2', '3', '4', '5')
+result = select("Pick a number!", options = myOptions)
+choice = popAsk("Did you select "+result+"?")
+
+//conditional example //
+
+modes = ("Add", "Sub", "Mul", "Div")
+option = select("What would you like to do?", options = modes)
+click(START)
+wait(SEARCHBAR)
+type("calc"+Key.ENTER)
+wait(CALCSCREEN)
+click(Pattern(FIVE).targetOffset(-41,-1))
+if option == modes[0]:
+    click(Pattern(ADD).targetOffset(37,63))
+elif option == modes[1]:
+    click(Pattern(SUB).targetOffset(37,30))
+elif option == modes[2]:
+    click(Pattern(MUL).targetOffset(38,-4))
+else:
+    click(Pattern(DIV).targetOffset(38,-30))
+click(Pattern(FIVE).targetOffset(-41,-1))
+click(Pattern(EQUALS).targetOffset(77,44))
