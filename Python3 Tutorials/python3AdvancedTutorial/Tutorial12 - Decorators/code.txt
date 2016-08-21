@@ -1,0 +1,65 @@
+
+--------------// code //-------------------
+
+//existsDec.py//
+
+import os
+
+def Exists(oldFunc):
+	def inside(filename):
+		if (os.path.exists(filename)):
+			oldFunc(filename)
+		else:
+			print("File Does Not Exist")
+	return inside
+
+@Exists
+def outputLine(inFile):
+	with open(inFile) as f:
+		print (f.readlines())
+
+
+func = Exists(outputLine)
+func("example.py")
+func("test.py")
+
+outputLine("example.py")
+
+//paramsDec.py//
+
+def Params(oldFunc):
+	def inside(*args, **kwargs):
+		print("Params: ", args, kwargs)
+		return oldFunc(*args, **kwargs)
+	return inside
+
+@Params
+def Mult(x, y=10):
+	print(x*y)
+	
+Mult(4,4)
+Mult(3)
+Mult(x=1,y=3)
+
+
+//addtagsDec.py//
+
+def AddTags(*tags):
+	def decorator(oldFunc):
+		def inside(*args, **kwargs):
+			code = oldFunc(*args, **kwargs)
+			for tag in reversed(tags):
+				code = "<{0}>{1}</{0}>".format(tag,code)
+			return code
+		return inside
+	return decorator
+
+@AddTags("p","i","b")
+def MyWebWelcome(name):
+	return "Welcome "+name+" To my blog!"
+
+print(MyWebWelcome("Draps"))
+
+
+
+
