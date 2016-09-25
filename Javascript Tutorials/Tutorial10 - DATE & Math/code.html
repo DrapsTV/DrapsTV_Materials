@@ -1,0 +1,48 @@
+//guess.html//
+
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var hiddenNum = Math.floor(Math.random()*100)+1; //generate num between 1-100
+function checkGuess()
+{
+	var guess = document.getElementById("guess").value;
+	var out;
+    if (guess == hiddenNum) {
+        out = "Correct!";
+    } else if (guess > hiddenNum) {
+        out = "Too high!";
+    } else {
+        out = "Too low!";
+    }
+	document.getElementById("output").innerHTML = out;
+}
+</script>
+<p> Try to guess the number between 1 and 100</p>
+Guess: <input type="text" id="guess">
+<button onclick="checkGuess()">Try</button>
+<p id="output"></p>
+</body>
+</html>
+
+// timeit.html //
+
+<!DOCTYPE html>
+<html>
+<body>
+<p id="output"></p>
+<script>
+function runLoops(n)
+{
+	for (var i =0; i < n; i++)
+		console.log(i.toString());
+}
+var startTime = Date.now();
+runLoops(141);
+var endTime = Date.now();
+var output = "Time Taken: " + String(endTime-startTime) + " milliseconds";
+document.getElementById("output").innerHTML = output;
+</script>
+</body>
+</html>
