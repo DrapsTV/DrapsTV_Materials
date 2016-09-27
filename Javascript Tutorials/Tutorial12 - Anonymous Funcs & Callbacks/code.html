@@ -1,0 +1,88 @@
+//shorthand.html//
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+(function (win) {
+	win._E = function(arg){
+		if (arg.startsWith(".")) {
+			return document.getElementsByClassName(arg.substring(1));
+		} else {
+			return document.getElementById(arg);
+		}
+	}
+})(window);
+
+var run = function () { 
+	_E("out").innerHTML = "Hello " + _E("name").value;
+	for (var ele of _E(".aClass")) {
+		ele.innerHTML = "Hello " + _E("name").value;
+	}
+};
+</script>
+</head>
+<body>
+
+<input type="text" id="name" />
+<button onclick="run();"> Run </button>
+<p id="out"></p>
+<h1 class="aClass"></h1>
+<h2 class="aClass"></h2>
+</body>
+</html>
+
+//sorting.html//
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+(function (win) {
+	win._E = function(arg){
+		if (arg.startsWith(".")) {
+			return document.getElementsByClassName(arg.substring(1));
+		} else {
+			return document.getElementById(arg);
+		}
+	}
+})(window);
+</script>
+</head>
+<body>
+<p id="outN"></p>
+<p id="outI"></p>
+<script>
+var numbers = [8, 2, 4, 6, 5, 12, 1];
+_E("outN").innerHTML = numbers.toString();
+_E("outN").innerHTML += "<br/>"+numbers.sort().toString();
+numbers.sort(function (a, b) {
+	return a - b;
+});
+_E("outN").innerHTML += "<br/>"+numbers.toString();
+
+var items = [
+	{ name: 'Cola', price: 3.00 },
+	{ name: 'Bread', price: 2.50 },
+	{ name: 'CoffeeJar', price: 8.00 },
+	{ name: 'Pasta', price: 4.00 }
+];
+for (var itm of items) {
+	_E("outI").innerHTML += itm.name+" : "+itm.price.toString()+"</br>";
+}
+_E("outI").innerHTML += "<br/>"
+items.sort(function (a, b) {
+	if (a.price > b.price) {
+		return 1;
+	} 
+	if (a.price < b.price) {
+		return -1;
+	}
+	return 0;
+});
+for (var itm of items){
+	_E("outI").innerHTML += itm.name+" : "+itm.price.toString()+"</br>";
+}
+</script>
+</body>
+</html>
